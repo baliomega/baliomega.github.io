@@ -1,0 +1,22 @@
+@import "reset"
+@import "mixins"
+@import "variables"
+
+body
+    font-family: -apple-system, "BlinkMacSystemFont", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", sans-serif
+    font-size: 0.85rem
+    color: $grey
+
+.container
+    display: flex
+    align-items: center
+    min-height: 400px
+    justify-content: center
+
+    .container--vertical
+        text-align: center
+        flex: none
+        max-width: 50%
+        background: $light-grey
+        @include border-radius(10px)
+        padding: 20px 50px
