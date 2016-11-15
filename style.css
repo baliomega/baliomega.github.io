@@ -40,8 +40,8 @@ body {
 .container {
   display: flex;
   align-items: center;
-  min-height: 400px;
-  justify-content: center; }
+  justify-content: center;
+  height: 100vh; }
   .container .container--vertical {
     text-align: center;
     flex: none;
