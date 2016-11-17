@@ -1,0 +1,25 @@
+@import "reset";
+@import "mixins";
+@import "variables";
+
+body {
+    font-family: -apple-system, "BlinkMacSystemFont", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", sans-serif;
+    font-size: $gamma;
+    line-height: $gamma-line-height;
+    color: $grey;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    .container--vertical {
+        flex: none;
+        max-width: 50%;
+        background: $light-grey;
+        @include border-radius(10px);
+        padding: 20px 50px;
+    }
+}

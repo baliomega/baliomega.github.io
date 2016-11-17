@@ -1,0 +1,30 @@
+// Color
+
+$dark-grey: #666;
+$grey: #333;
+$light-grey: #ececec;
+
+// Font
+
+$alpha: 24px;
+$alpha-line-height: 30px;
+.alpha {
+    font-size: $alpha;
+    line-height: $alpha-line-height;
+}
+
+$beta: 20px;
+$beta-line-height: 26px;
+.beta {
+    font-size: $beta;
+    line-height: $beta-line-height;
+}
+
+$gamma: 18px;
+$gamma-line-height: 28px;
+.gamma {
+    font-size: $gamma;
+    line-height: $gamma-line-height;
+}
+
+.text--center {text-align: center;}
