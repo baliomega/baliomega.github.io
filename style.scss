@@ -17,9 +17,9 @@ body {
 
     .container--vertical {
         flex: none;
-        max-width: 30%;
+        max-width: 40%;
         background: $light-grey;
         @include border-radius(10px);
-        padding: 20px 50px;
+        padding: 40px 50px;
     }
 }
