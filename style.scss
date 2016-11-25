@@ -6,7 +6,7 @@ body {
     font-family: -apple-system, "BlinkMacSystemFont", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", sans-serif;
     font-size: $gamma;
     line-height: $gamma-line-height;
-    color: $grey;
+    color: $dark-grey;
 }
 
 .container {
@@ -17,7 +17,7 @@ body {
 
     .container--vertical {
         flex: none;
-        max-width: 50%;
+        max-width: 30%;
         background: $light-grey;
         @include border-radius(10px);
         padding: 20px 50px;
