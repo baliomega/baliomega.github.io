@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="180px" viewBox="0 0 160 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>02</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="revival_logo" transform="translate(-432.000000, -132.000000)">
+            <g id="02" transform="translate(432.000000, 132.000000)">
+                <rect id="Rectangle" stroke="#FFE700" stroke-width="3" x="1.5" y="1.5" width="157" height="177"></rect>
+                <text id="R" font-family="Montserrat-Black, Montserrat" font-size="80" font-weight="700" fill="#FFE700">
+                    <tspan x="19" y="88">R</tspan>
+                </text>
+                <text id="V" font-family="Montserrat-Black, Montserrat" font-size="80" font-weight="700" fill="#FFE700">
+                    <tspan x="74" y="88">V</tspan>
+                </text>
+                <text id="V" font-family="Montserrat-Black, Montserrat" font-size="80" font-weight="700" fill="#FFE700">
+                    <tspan x="26" y="150">V</tspan>
+                </text>
+                <text id="L" font-family="Montserrat-Black, Montserrat" font-size="80" font-weight="700" fill="#FFE700">
+                    <tspan x="91" y="150">L</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
