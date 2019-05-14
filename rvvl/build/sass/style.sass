@@ -1,0 +1,118 @@
+$yellow: #FFE700 !default
+
+body
+    cursor: url(../img/cursor--default.png), auto !important
+    overflow-x: hidden
+
+    &::-webkit-scrollbar
+        width: 16px
+        background-color: transparent 
+
+    &::-webkit-scrollbar-track
+        background-color: transparent
+
+    &::-webkit-scrollbar-thumb
+        background-color: $yellow
+
+input
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active
+        -webkit-box-shadow: 0 0 0 30px #000000 inset !important
+        -webkit-text-fill-color: white !important
+
+.logo-rvvl,
+.works-item,
+.ham-menu,
+.back-top,
+.clients-item,
+.btn-submit,
+.ham-menu_panel a
+    cursor: url(../img/cursor--pointer.png) 30 2, pointer !important
+
+a,
+a:active,
+a:focus 
+    outline: none !important
+
+.yellow
+    color: $yellow
+
+.b--yellow
+    border-color: $yellow
+
+.bg-yellow
+    background-color: $yellow
+
+::selection
+    background: $yellow
+    color: black
+
+.f-vw-1
+    font-size: 12vw
+
+.f-vw-2
+    font-size: 8vw
+
+.f-vw-3
+    font-size: 4vw
+
+.f-4
+    font-size: 4rem
+
+.services-item,
+.btn-submit
+    &:hover
+        box-shadow: 0px 0px 20px 0px rgba( 255, 231, 0, 0.8 )
+        transition: all .2s ease-in-out
+
+.bg-video
+    object-fit: cover
+
+.z--1
+    z-index: -1
+
+.open-menu .ham-menu_panel
+    transform: translateX(0)
+
+.ham-menu_panel
+    transform: translateX(100vw)
+    transition: transform .4s ease-in-out
+    overflow: hidden
+
+    a:hover
+        color: #000000
+        text-shadow: -2px -2px 0 $yellow, 2px -2px 0 $yellow, -2px 2px 0 $yellow, 2px 2px 0 $yellow
+
+    a.social-media:hover,
+    a.js-close-menu:hover
+        color: $yellow
+        text-shadow: none
+
+.vw-100
+    width: 100vw
+
+.works-item
+    padding-top: 74.7449%
+
+    &:hover .works-title
+        opacity: 1
+
+.works-title
+    transform: translate(-50%,-50%)
+    top: 50%
+    left: 50%
+
+.works-video
+    object-fit: cover
+
+.top-100
+    top: 100%
+
+@media (max-width: 320px)
+    .small-text
+        font-size: 1.5rem
+
+        span
+            font-size: 2.25rem
