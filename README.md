@@ -8,7 +8,7 @@ This is the source code for my personal website and online resume, designed and 
   - Clean, responsive layout for desktop, tablet, and mobile
   - Animated, colorful abstract background shapes
   - Accessible, readable typography using the Inter font
-  - Contact information (email written out to avoid spam, LinkedIn, GitHub)
+  - Contact information (LinkedIn & GitHub)
   - Only two files: `index.html` and `style.css` for simplicity and performance
 
 ## How to View
