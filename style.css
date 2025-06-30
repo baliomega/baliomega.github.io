@@ -40,7 +40,7 @@ body {
 }
 
 .resume-container ul {
-  margin: 0 0 1em 1.5em;
+  margin: 0.8em 0;
   line-height: 1.6;
 }
 
@@ -155,10 +155,6 @@ section h2 {
   font-size: 1rem;
 }
 
-.skills-block ul {
-  margin: 0.2em 0 0.8em 0;
-}
-
 .achievement-block {
   margin-top: 1em;
   margin-bottom: 2em;
@@ -190,10 +186,52 @@ section h2 {
   min-width: 220px;
 }
 
-.job-duration {
+.job-duration, .project-date {
   font-size: 0.95em;
   color: #888;
   font-weight: 400;
+}
+
+.project-cards-row {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.project-card {
+  border-radius: 12px;
+  border: 1px solid #cccccc;
+  padding: 28px 24px 20px 24px;
+  flex: 1 1 340px;
+  min-width: 280px;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.project-type, .project-date {
+  font-size: 0.98em;
+  color: #888;
+}
+
+.project-description {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.project-links a {
+  margin-right: 16px;
+  color: #0984e3;
+  text-decoration: underline;
+  font-weight: 500;
 }
 
 .background-abstract {
@@ -286,9 +324,17 @@ section h2 {
     max-width: none;
     padding: 30px;
     background: #fff;
-    box-shadow: none;
     border-radius: 0;
     margin: 120px auto;
+  }
+  .project-cards-row {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .project-card {
+    max-width: 100%;
+    margin-bottom: 0;
+    flex: none;
   }
 }
 
@@ -296,7 +342,6 @@ section h2 {
   .resume-container {
     padding: 24px;
     background: #fff;
-    box-shadow: none;
     border-radius: 0;
   }
 }
