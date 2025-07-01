@@ -405,7 +405,7 @@ section h2 {
   /* Floating nav becomes a bottom bar */
   .floating-nav {
     top: auto;
-    bottom: 10px;
+    bottom: 20px;
     right: 50%;
     transform: translateX(50%);
     flex-direction: row;
@@ -421,7 +421,7 @@ section h2 {
   .back-to-top {
     width: 20px;
     height: 20px;
-    font-size: 1rem;
+    font-size: .9rem;
   }
 }
 @media (max-width: 480px) {
