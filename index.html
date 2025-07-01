@@ -17,6 +17,18 @@
     </script>
 </head>
 <body>
+  <!-- Floating navigation for section links and back-to-top button -->
+  <nav class="floating-nav" aria-label="Section navigation">
+    <ul>
+      <li><a href="#profile-summary">About</a></li>
+      <li><a href="#experience-heading">Experience</a></li>
+      <li><a href="#education-heading">Education</a></li>
+      <li><a href="#skills-heading">Skills</a></li>
+      <li><a href="#projects-heading">Projects</a></li>
+    </ul>
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+  </nav>
   <div class="background-abstract" aria-hidden="true">
     <div class="dotted-line"></div>
     <div class="shape triangle"></div>
@@ -37,6 +49,7 @@
     <div class="shape ring ring5"></div>
   </div>
   <div class="resume-container">
+    <!-- Header: Name, title, contact info -->
     <header class="resume-header" role="banner">
       <div class="header-left">
         <h1>NURUL IZWAN DAHLAN</h1>
@@ -48,11 +61,13 @@
       </div>
     </header>
     <main>
-      <section class="profile-summary">
+      <!-- Profile summary section -->
+      <section class="profile-summary" id="profile-summary">
         <h2 class="visually-hidden">Profile Summary</h2>
         <p>Highly skilled UI/UX Designer and Front-End Developer with a strong record of crafting exceptional user experiences across web and mobile platforms. Proficient in integrating creative design principles with technical expertise to deliver visually appealing and intuitive interfaces. Seeking opportunities in web or app product development to apply my expertise in design and front-end development.</p>
       </section>
 
+      <!-- Experience section -->
       <section aria-labelledby="experience-heading">
         <h2 id="experience-heading">Experience</h2>
         <div class="job-block">
@@ -183,6 +198,7 @@
           </div>
         </div>
       </section>
+      <!-- Education section -->
       <section aria-labelledby="education-heading">
         <h2 id="education-heading">Education</h2>
         <div class="education-row">
@@ -198,9 +214,11 @@
           </div>
         </div>
       </section>
+      <!-- Skills section -->
       <section aria-labelledby="skills-heading">
         <h2 id="skills-heading">Skills</h2>
         <div class="skills-block">
+          <!-- AI Tool Skills -->
           <div>
             <strong>AI Tool Skills</strong>
             <ul>
@@ -209,10 +227,12 @@
               <li>Coding assistance - ChatGPT, Github Copilot, Cursor</li>
             </ul>
           </div>
+          <!-- Technical Skills -->
           <div>
             <strong>Technical Skills</strong>
             <p>HTML/CSS, CSS preprocessor, Git, Bootstrap, TailwindCSS, VanillaJS, ReactJS, PHP</p>
           </div>
+          <!-- Design Skills -->
           <div>
             <strong>Design Skills</strong>
             <p>Web Design, Mobile App Design, UX Prototyping, Wireframes, Design System, Art Direction, Vector Illustration, Image Manipulation</p>
@@ -223,9 +243,11 @@
           </div>
         </div>
       </section>
+      <!-- Projects section -->
       <section aria-labelledby="projects-heading" class="projects-section">
         <h2 id="projects-heading">Projects</h2>
         <div class="project-cards-row">
+          <!-- MindShuffler Chrome Extension card -->
           <div class="project-card">
             <div class="project-header">
               <div>
@@ -252,6 +274,7 @@
               <a href="https://chromewebstore.google.com/detail/cfffleeiimfnoblihmcomkiicimjcpco?utm_source=item-share-cb" target="_blank" rel="noopener">View on Chrome Web Store</a>
             </div>
           </div>
+          <!-- Dummy project card -->
           <div class="project-card">
             <div class="project-header">
               <div>

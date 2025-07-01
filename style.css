@@ -1,3 +1,20 @@
+/* =========================
+   Root Variables
+   ========================= */
+:root {
+  --primary: #0984e3;
+  --accent: #00b894;
+  --card-bg: #fff;
+  --nav-bg: rgba(255,255,255,0.8);
+  --nav-bg-mobile: #fff;
+  --shadow: 0 2px 16px rgba(0,0,0,0.08);
+  --shadow-mobile: 0 2px 16px rgba(0,0,0,0.1);
+  --border: 1px solid #cccccc;
+}
+
+/* =========================
+   Base Styles
+   ========================= */
 body {
   background: #f5f6fa;
   font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
@@ -6,12 +23,15 @@ body {
   margin: 0;
 }
 
+/* =========================
+   Resume Container & Layout
+   ========================= */
 .resume-container {
   max-width: 904px;
   margin: 64px auto;
   padding: 64px 48px 64px 48px;
   background: rgba(255,255,255,0.8);
-  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  box-shadow: var(--shadow);
   border-radius: 12px;
   position: relative;
   z-index: 1;
@@ -20,17 +40,18 @@ body {
 .resume-container section {
   margin-bottom: 5em;
 }
-
 .resume-container section:last-child {
   margin-bottom: 0;
 }
 
+/* =========================
+   Typography
+   ========================= */
 .resume-container h1 {
   font-size: 2.5rem;
   margin-bottom: 0.25em;
   line-height: 1.2;
 }
-
 .resume-container h2 {
   font-size: 1.5rem;
   margin-top: 0;
@@ -39,43 +60,40 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-
 .resume-container h3 {
   font-size: 1.15rem;
   margin-top: 1.2em;
   margin-bottom: 0.2em;
   line-height: 1.4;
 }
-
 .resume-container ul {
   margin: 0.8em 0;
   line-height: 1.6;
 }
-
 .resume-container p {
   margin: 0;
   line-height: 1.7;
 }
 
+/* =========================
+   Header
+   ========================= */
 .resume-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 40px;
 }
-
 .header-left, .header-right {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-
 .header-left h1 {
   font-size: 2.2rem;
   font-weight: 700;
   margin: 0 0 0.1em 0;
 }
-
 .header-left h2 {
   font-size: 1.1rem;
   font-weight: 400;
@@ -83,151 +101,191 @@ body {
   letter-spacing: 0.01em;
   text-transform: none;
 }
-
 .header-right {
   text-align: right;
   font-size: 1rem;
   min-width: 220px;
 }
-
 .header-right p {
   margin: 0.1em 0;
 }
 
+/* =========================
+   Section Headings & Blocks
+   ========================= */
 .profile-summary p {
   font-size: 1.08rem;
   margin: 0;
 }
-
 section h2 {
   margin-top: 0;
   margin-bottom: 24px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-
 .job-block {
   margin-bottom: 0;
 }
-
 .job-header {
   display: flex;
   gap: 2em;
   margin-bottom: 32px;
 }
-
 .job-header > div {
   min-width: 220px;
   font-size: 1.05rem;
 }
-
 .job-header ul {
   margin: 0;
   padding-left: 1.2em;
   font-weight: 400;
   font-size: 1rem;
 }
-
 .education-row {
   display: flex;
   gap: 3em;
 }
-
 .education-row > div {
   min-width: 260px;
   font-size: 1.05rem;
 }
-
 .skills-block {
   display: flex;
   flex-wrap: wrap;
   gap: 2em;
 }
-
 .skills-block > div {
   min-width: 220px;
   font-size: 1rem;
 }
-
 .achievement-block {
   margin-top: 1em;
   margin-bottom: 2em;
 }
-
 .achievement-block > div {
   margin-bottom: 1.2em;
 }
-
 .achievement-block strong {
   font-size: 1.05rem;
 }
-
 .achievement-block span {
   font-weight: 400;
   font-size: 0.98rem;
   margin-left: 0.5em;
   color: #555;
 }
-
 .bottom-row {
   display: flex;
   justify-content: flex-start;
   gap: 4em;
   font-size: 1.05rem;
 }
-
 .bottom-row > div {
   min-width: 220px;
 }
-
 .job-duration, .project-date {
   font-size: 0.95em;
   color: #888;
   font-weight: 400;
 }
 
+/* =========================
+   Project Cards Section
+   ========================= */
 .project-cards-row {
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-
 .project-card {
   border-radius: 12px;
-  border: 1px solid #cccccc;
+  border: var(--border);
   padding: 28px 24px 20px 24px;
   flex: 1 1 340px;
   min-width: 280px;
   max-width: 420px;
   display: flex;
   flex-direction: column;
+  background: var(--card-bg);
 }
-
 .project-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 8px;
 }
-
 .project-type, .project-date {
   font-size: 0.98em;
   color: #888;
 }
-
 .project-description {
   margin-bottom: 12px;
   font-size: 1.05rem;
 }
-
 .project-links a {
   margin-right: 16px;
-  color: #0984e3;
+  color: var(--primary);
   text-decoration: underline;
   font-weight: 500;
 }
 
+/* =========================
+   Floating Navigation
+   ========================= */
+.floating-nav {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: var(--nav-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.floating-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.floating-nav a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.floating-nav a:hover,
+.floating-nav a:focus {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.back-to-top {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.back-to-top:hover,
+.back-to-top:focus {
+  background: var(--accent);
+}
+
+/* =========================
+   Animated Background Shapes
+   ========================= */
 .background-abstract {
   position: fixed;
   top: 0; left: 0; width: 100vw; height: 100vh;
@@ -235,7 +293,6 @@ section h2 {
   pointer-events: none;
   overflow: hidden;
 }
-
 .dotted-line {
   position: absolute;
   top: 50vh;
@@ -246,89 +303,86 @@ section h2 {
   z-index: 0;
   pointer-events: none;
 }
-
 .shape {
   position: absolute;
   pointer-events: none;
 }
-
+/* Triangles */
 .triangle, .triangle2, .triangle3, .triangle4, .triangle5, .triangle6 {
   position: absolute;
   width: 0; height: 0;
   animation: float-shape 3s ease-in-out infinite alternate;
 }
-
-.triangle { left: -80px; top: 10vh; border-left: 80px solid transparent; border-right: 80px solid transparent; border-bottom: 140px solid #00b894; animation-delay: 0.5s; }
+.triangle { left: -80px; top: 10vh; border-left: 80px solid transparent; border-right: 80px solid transparent; border-bottom: 140px solid var(--accent); animation-delay: 0.5s; }
 .triangle2 { left: 80vw; top: 75vh; border-left: 50px solid transparent; border-right: 50px solid transparent; border-bottom: 100px solid #e17055; animation-delay: 1.1s; }
-.triangle3 { left: 10vw; top: 15vh; border-left: 40px solid transparent; border-right: 40px solid transparent; border-bottom: 80px solid #0984e3; animation-delay: 2.3s; }
+.triangle3 { left: 10vw; top: 15vh; border-left: 40px solid transparent; border-right: 40px solid transparent; border-bottom: 80px solid var(--primary); animation-delay: 2.3s; }
 .triangle4 { left: 60vw; top: -60px; border-left: 50px solid transparent; border-right: 50px solid transparent; border-bottom: 60px solid #fdcb6e; animation-delay: 2.8s; }
 .triangle5 { left: 30vw; top: 80vh; border-left: 60px solid transparent; border-right: 60px solid transparent; border-bottom: 120px solid #ff7675; animation-delay: 2.2s; }
 .triangle6 { left: 90vw; top: 50vh; border-left: 40px solid transparent; border-right: 40px solid transparent; border-bottom: 100px solid #6c5ce7; animation-delay: 4.5s; }
-
+/* Circles */
 .circle, .circle2, .circle3, .circle4, .circle5 {
   position: absolute;
   border-radius: 50%;
   animation: float-shape 8s ease-in-out infinite alternate;
 }
-
-.circle { width: 180px; height: 180px; left: calc(100vw - 180px); top: 10vh; background: linear-gradient(135deg, #fdcb6e 0%, #00b894 100%); animation-delay: 1.7s; }
+.circle { width: 180px; height: 180px; left: calc(100vw - 180px); top: 10vh; background: linear-gradient(135deg, #fdcb6e 0%, var(--accent) 100%); animation-delay: 1.7s; }
 .circle2 { width: 90px; height: 90px; left: 24px; top: 80vh; background: linear-gradient(135deg, #e17055 0%, #fdcb6e 100%); animation-delay: 2.8s; }
 .circle3 { width: 180px; height: 180px; left: 50vw; top: -8vh; background: linear-gradient(135deg, #6c5ce7 0%, #fdcb6e 100%); animation-delay: 2.8s; }
 .circle4 { width: 200px; height: 200px; left: 15vw; top: calc(100vh - 140px); background: linear-gradient(135deg, #01d2fc 0%, #ffeaa7 100%); animation-delay: 2.7s; }
 .circle5 { width: 100px; height: 100px; left: 70vw; top: 60vh; background: linear-gradient(135deg, #fd79a8 0%, #a29bfe 100%); animation-delay: 3.9s; }
-
+/* Rings */
 .ring, .ring2, .ring3, .ring4, .ring5 {
   position: absolute;
   border-radius: 50%;
   background: transparent;
   animation: float-shape 6s ease-in-out infinite alternate;
 }
-
 .ring { width: 100px; height: 100px; border: 10px solid #6c5ce7; left: 10vw; top: 60vh; animation-delay: 2.5s; }
-.ring2 { width: 60px; height: 60px; border: 6px solid #00b894; left: calc(100vw - 60px); top: 40vh; animation-delay: 1.7s; }
+.ring2 { width: 60px; height: 60px; border: 6px solid var(--accent); left: calc(100vw - 60px); top: 40vh; animation-delay: 1.7s; }
 .ring3 { width: 60px; height: 60px; border: 4px solid #e17055; left: 30vw; top: 10vh; animation-delay: 1.7s; }
 .ring4 { width: 80px; height: 80px; border: 8px dashed #fdcb6e; left: calc(100vw - 80px); top: 90vh; animation-delay: 5.2s; }
 .ring5 { width: 30px; height: 30px; border: 4px dotted #fd79a8; left: 80vw; top: 20vh; animation-delay: 6.1s; }
 
+/* =========================
+   Animations
+   ========================= */
 @keyframes float-shape {
   0% { transform: translateY(0) scale(1) rotate(0deg); }
   100% { transform: translateY(-60px) scale(1.1) rotate(12deg); }
 }
 
+/* =========================
+   Responsive Styles
+   ========================= */
 @media (max-width: 1100px) {
+  /* Layout adjustments for tablets and small desktops */
   .resume-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
-
   .header-right {
     text-align: left;
     min-width: 0;
     font-size: 0.98rem;
   }
-
   .education-row,
   .skills-block {
     flex-direction: column;
     gap: 18px;
   }
-
   .education-row > div,
   .skills-block > div {
     min-width: 0;
   }
-
   .job-header {
     flex-direction: column;
     gap: 8px;
     margin-bottom: 24px;
   }
-
   .job-header ul {
     padding-left: revert;
   }
-
   .resume-container {
     max-width: none;
     padding: 30px;
@@ -339,23 +393,49 @@ section h2 {
   .resume-container section {
     margin-bottom: 3em;
   }
-
   .project-cards-row {
     flex-direction: column;
     gap: 18px;
   }
-
   .project-card {
     max-width: 100%;
     margin-bottom: 0;
     flex: none;
   }
+  /* Floating nav becomes a bottom bar */
+  .floating-nav {
+    top: auto;
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    flex-direction: row;
+    border-radius: 9999px;
+    padding: 10px 14px;
+    background: var(--nav-bg-mobile);
+  }
+  .floating-nav ul {
+    flex-direction: row;
+    gap: 10px;
+    margin: 0;
+  }
+  .back-to-top {
+    width: 20px;
+    height: 20px;
+    font-size: 1rem;
+  }
 }
-
 @media (max-width: 480px) {
+  /* Layout adjustments for mobile */
   .resume-container {
     padding: 24px;
     background: #fff;
     border-radius: 0;
+  }
+  .floating-nav {
+    padding: 8px 12px;
+    box-shadow: var(--shadow-mobile);
+  }
+  .floating-nav a {
+    font-size: .85rem;
   }
 }
