@@ -84,30 +84,48 @@ body {
   align-items: flex-start;
   margin-bottom: 40px;
 }
-.header-left, .header-right {
+.header-left {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 1.2em;
+}
+.header-right {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-}
-.header-left h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin: 0 0 0.1em 0;
-}
-.header-left h2 {
-  font-size: 1.1rem;
-  font-weight: 400;
-  margin: 0 0 0.5em 0;
-  letter-spacing: 0.01em;
-  text-transform: none;
-}
-.header-right {
   text-align: right;
   font-size: 1rem;
   min-width: 220px;
 }
 .header-right p {
   margin: 0.1em 0;
+}
+.profile-photo {
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+}
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header-left h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 0.1em 0;
+  text-transform: uppercase;
+}
+.header-left h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
 
 /* =========================
@@ -422,6 +440,25 @@ section h2 {
     width: 20px;
     height: 20px;
     font-size: .8rem;
+  }
+}
+@media (max-width: 600px) {
+  .profile-photo {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+  }
+  .header-left {
+    flex-direction: row !important;
+    gap: 0.7em;
+  }
+  .header-left h1 {
+    font-size: 1.5rem;
+  }
+  .header-right {
+    text-align: left;
+    min-width: 0;
+    font-size: 0.98rem;
   }
 }
 @media (max-width: 480px) {

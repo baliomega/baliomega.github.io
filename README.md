@@ -9,6 +9,7 @@ This is the source code for my personal website and online resume, designed and 
   - Animated, colorful abstract background shapes
   - Accessible, readable typography using the Inter font
   - **Floating, sticky navigation** with section links and a back-to-top button
+  - **Profile photo**: Square image with rounded corners, displayed beside my name and designation in the header
   - Contact information (LinkedIn & GitHub)
   - **Projects section** with card UI to showcase work (e.g., Chrome Extensions, web apps)
   - Project cards are responsive and support multiple projects per row
