@@ -1,6 +1,6 @@
 # Nurul Izwan Dahlan – Personal Website
 
-This is the source code for my personal website and online resume, designed and developed by me, Nurul Izwan Dahlan.
+This is the source code for my personal website and online resume, originally created using a Cursor free account and further tweaked and customized by me, Nurul Izwan Dahlan.
 
 ## Overview
 - **Purpose:** Showcase my resume, skills, professional experience, and selected projects in a modern, accessible, and visually engaging format.
