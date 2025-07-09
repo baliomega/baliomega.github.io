@@ -16,6 +16,12 @@ This is the source code for my personal website and online resume, originally cr
   - Well-commented HTML and CSS for easy maintenance and learning
   - Only two main files: `index.html` and `style.css` for simplicity and performance
 
+## Profile Photo Guidelines
+
+- **Recommended size:** 200 x 200 pixels (square)
+- **Format:** JPG or PNG
+- **Tip:** Use a clear, professional headshot with good lighting and a neutral background.
+
 ## Projects Showcase
 - The site includes a "Projects" section with a modern card layout.
 - Example: MindShuffler Chrome Extension is featured, with a description, features, and a link to the Chrome Web Store.
