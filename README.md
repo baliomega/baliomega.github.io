@@ -110,8 +110,6 @@ baliomega.github.io/
 ├── tailwind.config.ts          # Tailwind CSS configuration
 ├── tsconfig.json               # TypeScript configuration
 ├── package.json
-├── resume_nurul-izwan-dahlan_2025.md      # Human-readable resume
-├── resume_nurul-izwan-dahlan_2025_ATS.md  # ATS-optimized resume
 └── README.md
 ```
 
@@ -257,17 +255,6 @@ Mobile-first approach with breakpoints:
 - Mobile: < 768px (reduced padding, smaller gradients, left-aligned timeline)
 - Tablet: 768px - 1024px
 - Desktop: > 1024px (full layout, centered timeline, larger spacing)
-
-## 📄 Resume Files
-
-Two resume versions are included:
-
-1. **`resume_nurul-izwan-dahlan_2025.md`**: Human-readable with formatting
-2. **`resume_nurul-izwan-dahlan_2025_ATS.md`**: ATS-optimized (95%+ pass rate)
-   - No special characters
-   - Simple formatting
-   - CORE COMPETENCIES section with keywords
-   - Standard section headers
 
 ## 📧 Contact
 
