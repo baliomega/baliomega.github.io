@@ -418,7 +418,7 @@ export default function Portfolio() {
                   <div className={`absolute top-[36px] -left-[32px] w-8 h-px bg-slate-200 z-0 lg:left-auto lg:w-8 ${idx % 2 === 0 ? 'lg:right-[50%]' : 'lg:left-[50%]'}`}></div>
 
                   {/* Timeline dot - left on mobile, centered on desktop */}
-                  <div className={`absolute top-8 -left-[36px] w-2 h-2 rounded-full bg-blue-600 ring-2 ring-white shadow-md z-10 lg:left-auto ${idx % 2 === 0 ? 'lg:right-[calc(50%-4px)]' : 'lg:left-[calc(50%-4px)]'}`}></div>
+                  <div className={`absolute top-8 -left-[36px] w-2 h-2 rounded-full bg-blue-600 ring-2 ring-white shadow-md z-10 lg:left-auto ${idx % 2 === 0 ? 'lg:right-[calc(50%-5px)]' : 'lg:left-[calc(50%-5px)]'}`}></div>
 
                   <div className={`bg-gradient-to-r from-white to-slate-50 p-8 rounded-xl border border-slate-200 hover:border-blue-200 hover:shadow-md transition-all ${idx % 2 === 0 ? 'lg:mr-8' : 'lg:ml-8'}`}>
                     <div className="mb-4">
