@@ -17,6 +17,13 @@ A modern, accessible portfolio website showcasing design systems expertise, buil
   - Proper color contrast ratios
   - 44×44px minimum touch target sizes
 - **Google Analytics**: Integrated GA4 tracking for visitor analytics
+- **SEO Optimized**: Comprehensive SEO implementation with:
+  - Open Graph tags for social media sharing
+  - Twitter Card metadata
+  - Structured data (JSON-LD) with schema.org Person markup
+  - robots.txt and sitemap.xml
+  - Canonical URLs and meta descriptions
+  - Google Search Console integration
 - **Interactive Elements**:
   - Project cards with keyboard support (Enter/Space to activate)
   - Modal case studies with full accessibility
@@ -104,7 +111,9 @@ baliomega.github.io/
 │   │   └── globals.css         # Global styles, focus styles, sr-only utility
 │   └── components/
 │       └── Portfolio-Stripe.tsx # Main portfolio component with accessibility
-├── public/                     # Static assets
+├── public/
+│   ├── robots.txt              # Search engine crawler directives
+│   └── sitemap.xml             # XML sitemap for SEO
 ├── .nojekyll                   # Disable Jekyll processing for GitHub Pages
 ├── next.config.ts              # Next.js config with static export
 ├── tailwind.config.ts          # Tailwind CSS configuration
@@ -165,10 +174,37 @@ const tools = [
 
 ### Google Analytics
 
-Update GA4 Measurement ID in `/src/app/layout.tsx` (line 27):
+Update GA4 Measurement ID in `/src/app/layout.tsx` (line 102):
 ```typescript
 gtag('config', 'G-YOUR-MEASUREMENT-ID');
 ```
+
+### SEO Configuration
+
+**Google Search Console Verification:**
+
+1. Go to [Google Search Console](https://search.google.com/search-console)
+2. Add your property: `https://baliomega.github.io`
+3. Get verification code
+4. Update `/src/app/layout.tsx` (line 53):
+```typescript
+verification: {
+  google: 'your-verification-code',
+},
+```
+
+**Open Graph Image (Recommended):**
+
+Create a social sharing image:
+- Size: 1200×630px
+- Save as `/public/og-image.jpg`
+- Include your name and title
+
+**Test SEO:**
+- **Google Rich Results**: https://search.google.com/test/rich-results
+- **Facebook Debugger**: https://developers.facebook.com/tools/debug/
+- **Twitter Card Validator**: https://cards-dev.twitter.com/validator
+- **LinkedIn Inspector**: https://www.linkedin.com/post-inspector/
 
 ### Design Customization
 
@@ -255,6 +291,32 @@ Mobile-first approach with breakpoints:
 - Mobile: < 768px (reduced padding, smaller gradients, left-aligned timeline)
 - Tablet: 768px - 1024px
 - Desktop: > 1024px (full layout, centered timeline, larger spacing)
+
+## 🔍 SEO Features
+
+### Meta Tags & Social Sharing
+- ✅ Optimized title, description, and keywords
+- ✅ Open Graph tags (Facebook, LinkedIn)
+- ✅ Twitter Card metadata
+- ✅ Canonical URLs
+- ✅ Robots meta directives
+
+### Structured Data
+- ✅ JSON-LD schema.org Person markup
+- ✅ Job title and organization
+- ✅ Social media profiles
+- ✅ Skills and expertise
+
+### SEO Files
+- ✅ `/robots.txt` - Crawler directives
+- ✅ `/sitemap.xml` - XML sitemap
+- ✅ Google Search Console integration
+
+### Performance
+- ✅ Static site generation (SSG)
+- ✅ Optimized images
+- ✅ Semantic HTML structure
+- ✅ Fast page load times
 
 ## 📧 Contact
 
