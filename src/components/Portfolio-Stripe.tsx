@@ -224,6 +224,15 @@ export default function Portfolio() {
             <div className="flex flex-wrap gap-4 justify-center">
               <a
                 href="#projects"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'cta_click', {
+                      button_name: 'view_work',
+                      button_location: 'hero',
+                      link_url: '#projects'
+                    });
+                  }
+                }}
                 className={`relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold overflow-hidden shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all hover:scale-105 ${
                   heroAnimation.isVisible ? 'animate-scaleIn delay-800' : 'animate-on-scroll'
                 }`}
@@ -238,6 +247,15 @@ export default function Portfolio() {
               </a>
               <a
                 href="#contact"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'cta_click', {
+                      button_name: 'get_in_touch',
+                      button_location: 'hero',
+                      link_url: '#contact'
+                    });
+                  }
+                }}
                 className={`relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold overflow-hidden shadow-lg shadow-slate-500/20 hover:shadow-xl hover:shadow-slate-500/30 transition-all hover:scale-105 ${
                   heroAnimation.isVisible ? 'animate-scaleIn delay-800' : 'animate-on-scroll'
                 }`}
