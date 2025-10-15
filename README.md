@@ -112,6 +112,12 @@ baliomega.github.io/
 │   └── components/
 │       └── Portfolio-Stripe.tsx # Main portfolio component with accessibility
 ├── public/
+│   ├── favicon.ico             # Legacy browser favicon
+│   ├── favicon.svg             # Modern browser favicon (vector)
+│   ├── favicon.png             # Favicon source file
+│   ├── apple-touch-icon.png    # iOS home screen icon
+│   ├── og-image.png            # Open Graph image (1200x630px)
+│   ├── og-image-square.png     # Square OG image (1200x1200px)
 │   ├── robots.txt              # Search engine crawler directives
 │   └── sitemap.xml             # XML sitemap for SEO
 ├── .nojekyll                   # Disable Jekyll processing for GitHub Pages
@@ -193,14 +199,20 @@ verification: {
 },
 ```
 
-**Open Graph Image (Recommended):**
+**Open Graph Image:**
 
-Create a social sharing image:
-- Size: 1200×630px
-- Save as `/public/og-image.jpg`
-- Include your name and title
+Social sharing images are included:
+- ✅ `/public/og-image.png` - 1200×630px (Facebook, LinkedIn, Twitter)
+- ✅ `/public/og-image-square.png` - 1200×1200px (alternative format)
 
-**Test SEO:**
+**Favicon Files:**
+
+Multiple favicon formats for broad compatibility:
+- ✅ `/public/favicon.svg` - Vector format (modern browsers)
+- ✅ `/public/favicon.ico` - Legacy format (older browsers)
+- ✅ `/public/apple-touch-icon.png` - iOS home screen icon
+
+**Test SEO & Social Sharing:**
 - **Google Rich Results**: https://search.google.com/test/rich-results
 - **Facebook Debugger**: https://developers.facebook.com/tools/debug/
 - **Twitter Card Validator**: https://cards-dev.twitter.com/validator
@@ -296,8 +308,10 @@ Mobile-first approach with breakpoints:
 
 ### Meta Tags & Social Sharing
 - ✅ Optimized title, description, and keywords
-- ✅ Open Graph tags (Facebook, LinkedIn)
-- ✅ Twitter Card metadata
+- ✅ Open Graph tags (Facebook, LinkedIn, WhatsApp, Slack)
+- ✅ Twitter Card metadata with large image preview
+- ✅ Open Graph images (1200×630px and 1200×1200px)
+- ✅ Favicon support (SVG, ICO, PNG, Apple Touch Icon)
 - ✅ Canonical URLs
 - ✅ Robots meta directives
 
