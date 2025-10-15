@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { Mail, Linkedin, Github, X, ArrowRight, Check, Palette, Code2, Layout, Zap, AlertCircle, Lightbulb, TrendingUp, Settings, Boxes, Eye, Sparkles, Puzzle } from 'lucide-react'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
+import { useCounterAnimation } from '@/hooks/useCounterAnimation'
 
 interface Project {
   id: number
@@ -104,6 +106,21 @@ export default function Portfolio() {
     }
   }, [selectedProject])
 
+  // Scroll animations
+  const heroAnimation = useScrollAnimation({ threshold: 0.2 })
+  const statsAnimation = useScrollAnimation({ threshold: 0.3 })
+  const projectsAnimation = useScrollAnimation({ threshold: 0.1 })
+  const aboutAnimation = useScrollAnimation({ threshold: 0.2 })
+  const toolsAnimation = useScrollAnimation({ threshold: 0.1 })
+  const experienceAnimation = useScrollAnimation({ threshold: 0.1 })
+  const contactAnimation = useScrollAnimation({ threshold: 0.2 })
+
+  // Animated counters for stats
+  const tokensCount = useCounterAnimation({ end: 1000, isVisible: statsAnimation.isVisible })
+  const syncCount = useCounterAnimation({ end: 85, isVisible: statsAnimation.isVisible })
+  const parityCount = useCounterAnimation({ end: 100, isVisible: statsAnimation.isVisible })
+  const componentsCount = useCounterAnimation({ end: 50, isVisible: statsAnimation.isVisible })
+
   const projects: Project[] = [
     {
       id: 1,
@@ -175,9 +192,11 @@ export default function Portfolio() {
         <div className="absolute top-0 right-0 w-[400px] h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] bg-gradient-to-br from-purple-500 via-blue-500 to-transparent rounded-full blur-3xl opacity-50"></div>
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] bg-gradient-to-tr from-teal-500 via-blue-500 to-transparent rounded-full blur-3xl opacity-50"></div>
 
-        <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative z-10">
+        <div ref={heroAnimation.ref} className="container mx-auto px-6 lg:px-8 max-w-7xl relative z-10">
           <div className="text-center max-w-5xl mx-auto">
-            <div className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8 overflow-hidden shadow-lg shadow-purple-500/20 hover:shadow-xl hover:shadow-purple-500/30 transition-all">
+            <div className={`relative inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8 overflow-hidden shadow-lg shadow-purple-500/20 hover:shadow-xl hover:shadow-purple-500/30 transition-all ${
+              heroAnimation.isVisible ? 'animate-fadeIn' : 'animate-on-scroll'
+            }`}>
               <div className="absolute inset-0 bg-white/60 backdrop-blur-xl"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-purple-100/80 to-blue-100/80"></div>
               <div className="absolute inset-0 border border-purple-300/50 rounded-full"></div>
@@ -187,21 +206,27 @@ export default function Portfolio() {
               <span className="relative text-purple-700 z-10">Available for projects</span>
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight">
+            <h1 className={`text-5xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight ${
+              heroAnimation.isVisible ? 'animate-fadeInUp delay-200' : 'animate-on-scroll'
+            }`}>
               Bridging design and code with{' '}
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
                 design tokens
               </span>
             </h1>
 
-            <p className="text-lg lg:text-xl text-slate-600 mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className={`text-lg lg:text-xl text-slate-600 mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed ${
+              heroAnimation.isVisible ? 'animate-fadeInUp delay-500' : 'animate-on-scroll'
+            }`}>
               Expert in Figma Variables, design tokens, and building scalable design systems that developers love to use.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
               <a
                 href="#projects"
-                className="relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold overflow-hidden shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all hover:scale-105"
+                className={`relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold overflow-hidden shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all hover:scale-105 ${
+                  heroAnimation.isVisible ? 'animate-scaleIn delay-800' : 'animate-on-scroll'
+                }`}
               >
                 <div className="absolute inset-0 bg-white/60 backdrop-blur-xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/90 to-purple-600/90"></div>
@@ -213,7 +238,9 @@ export default function Portfolio() {
               </a>
               <a
                 href="#contact"
-                className="relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold overflow-hidden shadow-lg shadow-slate-500/20 hover:shadow-xl hover:shadow-slate-500/30 transition-all hover:scale-105"
+                className={`relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold overflow-hidden shadow-lg shadow-slate-500/20 hover:shadow-xl hover:shadow-slate-500/30 transition-all hover:scale-105 ${
+                  heroAnimation.isVisible ? 'animate-scaleIn delay-800' : 'animate-on-scroll'
+                }`}
               >
                 <div className="absolute inset-0 bg-white/40 backdrop-blur-xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-slate-100/30"></div>
@@ -225,28 +252,28 @@ export default function Portfolio() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-12 lg:mt-20 max-w-4xl mx-auto">
-              <div className="text-center">
+            <div ref={statsAnimation.ref} className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-12 lg:mt-20 max-w-4xl mx-auto">
+              <div className={`text-center ${statsAnimation.isVisible ? 'animate-fadeInUp' : 'animate-on-scroll'}`}>
                 <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
-                  1000+
+                  {tokensCount}+
                 </div>
                 <div className="text-slate-600 font-medium">Design Tokens</div>
               </div>
-              <div className="text-center">
+              <div className={`text-center ${statsAnimation.isVisible ? 'animate-fadeInUp delay-100' : 'animate-on-scroll'}`}>
                 <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent mb-2">
-                  85%
+                  {syncCount}%
                 </div>
                 <div className="text-slate-600 font-medium">Faster Sync</div>
               </div>
-              <div className="text-center">
+              <div className={`text-center ${statsAnimation.isVisible ? 'animate-fadeInUp delay-200' : 'animate-on-scroll'}`}>
                 <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent mb-2">
-                  100%
+                  {parityCount}%
                 </div>
                 <div className="text-slate-600 font-medium">Figma-Code Parity</div>
               </div>
-              <div className="text-center">
+              <div className={`text-center ${statsAnimation.isVisible ? 'animate-fadeInUp delay-300' : 'animate-on-scroll'}`}>
                 <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
-                  50+
+                  {componentsCount}+
                 </div>
                 <div className="text-slate-600 font-medium">Components Built</div>
               </div>
@@ -258,15 +285,15 @@ export default function Portfolio() {
 
       {/* Projects Section */}
       <main id="main-content">
-      <section id="projects" className="py-12 lg:py-24 bg-gradient-to-b from-white to-slate-50" aria-labelledby="projects-heading">
+      <section ref={projectsAnimation.ref} id="projects" className="py-12 lg:py-24 bg-gradient-to-b from-white to-slate-50" aria-labelledby="projects-heading">
         <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
-          <div className="text-center mb-8 lg:mb-16">
+          <div className={`text-center mb-8 lg:mb-16 ${projectsAnimation.isVisible ? 'animate-fadeIn' : 'animate-on-scroll'}`}>
             <h2 id="projects-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-3 lg:mb-4">Featured Work</h2>
             <p className="text-lg lg:text-xl text-slate-600">Real-world design systems that scale</p>
           </div>
 
           <div className="grid gap-8">
-            {projects.map((project) => (
+            {projects.map((project, idx) => (
               <div
                 key={project.id}
                 onClick={() => setSelectedProject(project)}
@@ -279,7 +306,9 @@ export default function Portfolio() {
                 tabIndex={0}
                 role="button"
                 aria-label={`View details for ${project.title}`}
-                className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer border border-slate-100 hover:border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer border border-slate-100 hover:border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 ${
+                  projectsAnimation.isVisible ? `animate-fadeInUp delay-${idx * 100 + 100}` : 'animate-on-scroll'
+                }`}
               >
                 <div className="grid lg:grid-cols-2 gap-2 lg:gap-8">
                   <div className="p-8 lg:p-10">
@@ -316,10 +345,10 @@ export default function Portfolio() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-12 lg:py-24 bg-white" aria-labelledby="about-heading">
+      <section ref={aboutAnimation.ref} id="about" className="py-12 lg:py-24 bg-white" aria-labelledby="about-heading">
         <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div>
+            <div className={`${aboutAnimation.isVisible ? 'animate-slideInLeft' : 'animate-on-scroll'}`}>
               <h2 id="about-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
                 Transforming design into production-ready code
               </h2>
@@ -336,23 +365,23 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
+            <div className={`grid grid-cols-2 gap-4 ${aboutAnimation.isVisible ? 'animate-slideInRight' : 'animate-on-scroll'}`}>
+              <div className={`bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200 ${aboutAnimation.isVisible ? 'animate-scaleIn delay-100' : ''}`}>
                 <Palette className="w-12 h-12 text-blue-600 mb-3" />
                 <div className="text-sm font-semibold text-blue-600 mb-2">Design Foundation</div>
                 <div className="font-bold text-slate-900 text-lg">Figma Variables</div>
               </div>
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200">
+              <div className={`bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200 ${aboutAnimation.isVisible ? 'animate-scaleIn delay-200' : ''}`}>
                 <Code2 className="w-12 h-12 text-purple-600 mb-3" />
                 <div className="text-sm font-semibold text-purple-600 mb-2">Code Translation</div>
                 <div className="font-bold text-slate-900 text-lg">Design Tokens</div>
               </div>
-              <div className="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-xl border border-teal-200">
+              <div className={`bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-xl border border-teal-200 ${aboutAnimation.isVisible ? 'animate-scaleIn delay-300' : ''}`}>
                 <Layout className="w-12 h-12 text-teal-600 mb-3" />
                 <div className="text-sm font-semibold text-teal-600 mb-2">Component Systems</div>
                 <div className="font-bold text-slate-900 text-lg">React Libraries</div>
               </div>
-              <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl border border-orange-200">
+              <div className={`bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl border border-orange-200 ${aboutAnimation.isVisible ? 'animate-scaleIn delay-400' : ''}`}>
                 <Zap className="w-12 h-12 text-orange-600 mb-3" />
                 <div className="text-sm font-semibold text-orange-600 mb-2">Automation</div>
                 <div className="font-bold text-slate-900 text-lg">Style Dictionary</div>
@@ -363,9 +392,9 @@ export default function Portfolio() {
       </section>
 
       {/* Tools & Expertise Section */}
-      <section id="tools" className="py-12 lg:py-24 bg-gradient-to-b from-slate-50 to-white" aria-labelledby="tools-heading">
+      <section ref={toolsAnimation.ref} id="tools" className="py-12 lg:py-24 bg-gradient-to-b from-slate-50 to-white" aria-labelledby="tools-heading">
         <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
-          <div className="text-center mb-8 lg:mb-16">
+          <div className={`text-center mb-8 lg:mb-16 ${toolsAnimation.isVisible ? 'animate-fadeIn' : 'animate-on-scroll'}`}>
             <h2 id="tools-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-3 lg:mb-4">Tools & Expertise</h2>
             <p className="text-lg lg:text-xl text-slate-600">Full-stack design systems capabilities</p>
           </div>
@@ -376,7 +405,9 @@ export default function Portfolio() {
               return (
               <div
                 key={idx}
-                className="bg-white p-8 rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all"
+                className={`bg-white p-8 rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all ${
+                  toolsAnimation.isVisible ? `animate-fadeInUp delay-${idx * 100}` : 'animate-on-scroll'
+                }`}
               >
                 <Icon className="w-8 h-8 text-blue-600 mb-4" />
                 <div className="text-sm font-semibold text-blue-600 mb-2">{tool.category}</div>
@@ -400,9 +431,9 @@ export default function Portfolio() {
       <div className="border-t border-slate-200"></div>
 
       {/* Experience Section */}
-      <section id="experience" className="pt-12 pb-0 lg:pt-24 bg-white" aria-labelledby="experience-heading">
+      <section ref={experienceAnimation.ref} id="experience" className="pt-12 pb-0 lg:pt-24 bg-white" aria-labelledby="experience-heading">
         <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
-          <div className="text-center mb-6 lg:mb-8">
+          <div className={`text-center mb-6 lg:mb-8 ${experienceAnimation.isVisible ? 'animate-fadeIn' : 'animate-on-scroll'}`}>
             <h2 id="experience-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-3 lg:mb-4">Experience</h2>
             <p className="text-lg lg:text-xl text-slate-600">Building design systems at scale</p>
           </div>
@@ -420,7 +451,9 @@ export default function Portfolio() {
                   {/* Timeline dot - left on mobile, centered on desktop */}
                   <div className={`absolute top-8 -left-[36px] w-2 h-2 rounded-full bg-blue-600 ring-2 ring-white shadow-md z-10 lg:left-auto ${idx % 2 === 0 ? 'lg:right-[calc(50%-5px)]' : 'lg:left-[calc(50%-5px)]'}`}></div>
 
-                  <div className={`bg-gradient-to-r from-white to-slate-50 p-8 rounded-xl border border-slate-200 hover:border-blue-200 hover:shadow-md transition-all ${idx % 2 === 0 ? 'lg:mr-8' : 'lg:ml-8'}`}>
+                  <div className={`bg-gradient-to-r from-white to-slate-50 p-8 rounded-xl border border-slate-200 hover:border-blue-200 hover:shadow-md transition-all ${idx % 2 === 0 ? 'lg:mr-8' : 'lg:ml-8'} ${
+                    experienceAnimation.isVisible ? (idx % 2 === 0 ? `animate-slideInLeft delay-${idx * 100}` : `animate-slideInRight delay-${idx * 100}`) : 'animate-on-scroll'
+                  }`}>
                     <div className="mb-4">
                       <div className="text-blue-600 font-semibold text-sm mb-2">{exp.company}</div>
                       <h3 className="text-xl font-bold text-slate-900 mb-2">{exp.role}</h3>
@@ -438,20 +471,24 @@ export default function Portfolio() {
 
       {/* Contact Section */}
       <footer>
-      <section id="contact" className="py-12 lg:py-24 bg-gradient-to-br from-blue-200 via-purple-200 to-teal-200" aria-labelledby="contact-heading">
+      <section ref={contactAnimation.ref} id="contact" className="py-12 lg:py-24 bg-gradient-to-br from-blue-200 via-purple-200 to-teal-200" aria-labelledby="contact-heading">
         <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 id="contact-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-              Let&apos;s build something great together
-            </h2>
-            <p className="text-xl text-slate-600 mb-12">
-              Looking for a design systems specialist who can bridge design and code? I&apos;m available for projects.
-            </p>
+            <div className={`${contactAnimation.isVisible ? 'animate-fadeIn' : 'animate-on-scroll'}`}>
+              <h2 id="contact-heading" className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                Let&apos;s build something great together
+              </h2>
+              <p className="text-xl text-slate-600 mb-12">
+                Looking for a design systems specialist who can bridge design and code? I&apos;m available for projects.
+              </p>
+            </div>
 
             <div className="flex flex-wrap gap-4 justify-center mb-12">
               <a
                 href="mailto:baliomega@gmail.com"
-                className="relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold overflow-hidden shadow-lg shadow-slate-500/20 hover:shadow-xl hover:shadow-slate-500/30 transition-all hover:scale-105"
+                className={`relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold overflow-hidden shadow-lg shadow-slate-500/20 hover:shadow-xl hover:shadow-slate-500/30 transition-all hover:scale-105 ${
+                  contactAnimation.isVisible ? 'animate-scaleIn delay-100' : 'animate-on-scroll'
+                }`}
               >
                 <div className="absolute inset-0 bg-white/40 backdrop-blur-xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-slate-100/30"></div>
@@ -465,7 +502,9 @@ export default function Portfolio() {
                 href="https://linkedin.com/in/baliomega"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold overflow-hidden shadow-lg shadow-slate-500/20 hover:shadow-xl hover:shadow-slate-500/30 transition-all hover:scale-105"
+                className={`relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold overflow-hidden shadow-lg shadow-slate-500/20 hover:shadow-xl hover:shadow-slate-500/30 transition-all hover:scale-105 ${
+                  contactAnimation.isVisible ? 'animate-scaleIn delay-200' : 'animate-on-scroll'
+                }`}
               >
                 <div className="absolute inset-0 bg-white/40 backdrop-blur-xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-slate-100/30"></div>
@@ -479,7 +518,9 @@ export default function Portfolio() {
                 href="https://github.com/baliomega"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold overflow-hidden shadow-lg shadow-slate-500/20 hover:shadow-xl hover:shadow-slate-500/30 transition-all hover:scale-105"
+                className={`relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold overflow-hidden shadow-lg shadow-slate-500/20 hover:shadow-xl hover:shadow-slate-500/30 transition-all hover:scale-105 ${
+                  contactAnimation.isVisible ? 'animate-scaleIn delay-300' : 'animate-on-scroll'
+                }`}
               >
                 <div className="absolute inset-0 bg-white/40 backdrop-blur-xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-slate-100/30"></div>
@@ -491,7 +532,7 @@ export default function Portfolio() {
               </a>
             </div>
 
-            <div className="text-sm text-slate-500">
+            <div className={`text-sm text-slate-500 ${contactAnimation.isVisible ? 'animate-fadeIn delay-400' : 'animate-on-scroll'}`}>
               © 2025 Nurul Izwan Dahlan. Design Systems Specialist.
             </div>
           </div>
