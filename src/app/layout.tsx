@@ -32,10 +32,11 @@ export const metadata: Metadata = {
     description: 'Expert in Figma Variables, Design Tokens & closing the design-development gap. Building scalable design systems at PETRONAS Digital.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Nurul Izwan Dahlan - Design Systems Specialist',
+        type: 'image/png',
       },
     ],
   },
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Nurul Izwan Dahlan | Design Systems Specialist',
     description: 'Expert in Figma Variables, Design Tokens & Design-to-Code workflows',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
     creator: '@baliomega',
   },
   alternates: {
