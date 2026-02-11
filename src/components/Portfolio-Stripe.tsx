@@ -31,6 +31,7 @@ interface AdditionalWork {
   description: string
   tags: string[]
   image?: string
+  link?: string
 }
 
 export default function Portfolio() {
@@ -179,18 +180,18 @@ export default function Portfolio() {
     {
       id: 1,
       category: 'UI/UX Design',
-      title: 'E-Commerce Mobile App',
-      description: 'Complete mobile shopping experience with intuitive navigation and seamless checkout flow',
-      tags: ['Mobile', 'iOS', 'Android', 'E-commerce'],
-      image: '/images/projects/uiux_ecommerce_app_1770305475636.png'
+      title: 'Entruss Ventures Sdn Bhd Corporate Website',
+      description: 'Entruss Ventures empowers innovators, businesses, and researchers through IP commercialization, professional training, and collaborative R&D projects.',
+      tags: ['IP Commercialization', 'Professional Training', 'R&D', 'Corporate Web'],
+      link: 'https://www.entruss.net'
     },
     {
       id: 2,
       category: 'UI/UX Design',
-      title: 'Banking Dashboard',
-      description: 'Modern financial dashboard with real-time analytics and transaction management',
-      tags: ['Web', 'Dashboard', 'FinTech', 'Analytics'],
-      image: '/images/projects/uiux_banking_dashboard_1770305493155.png'
+      title: 'Mah Sing Group Corporate Website',
+      description: "Official corporate website for one of Malaysia's top property developers, focused on inventing future living and enhancing quality of life.",
+      tags: ['Property Development', 'Real Estate', 'Sustainable Living', 'Corporate Web'],
+      link: 'https://www.mahsing.com.my/'
     },
     {
       id: 3,
@@ -553,12 +554,20 @@ export default function Portfolio() {
                   }
 
                   const colors = categoryColors[work.category]
+                  const CardWrapper = work.link ? 'a' : 'div'
+                  const wrapperProps = work.link ? {
+                    href: work.link,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    className: `block bg-white rounded-xl border ${colors.border} ${colors.hoverBorder} hover:shadow-lg transition-all overflow-hidden ${additionalWorksAnimation.isVisible ? `animate-fadeInUp delay-${idx * 100}` : 'animate-on-scroll'}`
+                  } : {
+                    className: `bg-white rounded-xl border ${colors.border} ${colors.hoverBorder} hover:shadow-lg transition-all overflow-hidden ${additionalWorksAnimation.isVisible ? `animate-fadeInUp delay-${idx * 100}` : 'animate-on-scroll'}`
+                  }
 
                   return (
-                    <div
+                    <CardWrapper
                       key={work.id}
-                      className={`bg-white rounded-xl border ${colors.border} ${colors.hoverBorder} hover:shadow-lg transition-all overflow-hidden ${additionalWorksAnimation.isVisible ? `animate-fadeInUp delay-${idx * 100}` : 'animate-on-scroll'
-                        }`}
+                      {...wrapperProps}
                     >
                       {/* Image Thumbnail */}
                       {work.image ? (
@@ -593,7 +602,7 @@ export default function Portfolio() {
                           ))}
                         </div>
                       </div>
-                    </div>
+                    </CardWrapper>
                   )
                 })}
               </div>
